@@ -55,7 +55,7 @@
 
 <p>This Privacy Policy describes how the <strong>Music Widget</strong> mobile application ("the app", "we") handles your information.</p>
 
-<p>The app is published on Google Play under the package id <code>com.eyalar.cloudtunes</code> (a legacy identifier from an earlier project name; it cannot be changed without unpublishing the listing and has no user-facing impact). It is a personal music-control widget for Android home screens that lets you play music from one of three supported backends: <strong>Spotify</strong>, <strong>Audius</strong>, or <strong>Radio Browser</strong>. <strong>No data leaves your device except the network requests required to talk to whichever backend you selected.</strong></p>
+<p>The app is published on Google Play under the package id <code>com.eyalar.cloudtunes</code> (a legacy identifier from an earlier project name; it cannot be changed without unpublishing the listing and has no user-facing impact). It is a personal music-control widget for Android home screens that lets you play music from one of two supported backends: <strong>Audius</strong> or <strong>Radio Browser</strong>. <strong>No data leaves your device except the network requests required to talk to whichever backend you selected.</strong></p>
 
 <h2>What we collect</h2>
 
@@ -67,13 +67,8 @@
   <thead><tr><th>Data</th><th>Where it lives</th><th>Why</th></tr></thead>
   <tbody>
     <tr>
-      <td>Your Spotify OAuth access + refresh token (only if you sign in to Spotify)</td>
-      <td>Stored locally in <a href="https://developer.android.com/topic/security/data"><code>EncryptedSharedPreferences</code></a> on your device (AES-256-GCM, key bound to the Android Keystore)</td>
-      <td>So you don't have to sign in on every cold start</td>
-    </tr>
-    <tr>
       <td>Your Audius @handle (only if you connect Audius)</td>
-      <td>Stored locally in <code>EncryptedSharedPreferences</code> on your device</td>
+      <td>Stored locally in <a href="https://developer.android.com/topic/security/data"><code>EncryptedSharedPreferences</code></a> on your device (AES-256-GCM, key bound to the Android Keystore)</td>
       <td>So the favourites grid can fetch your liked tracks</td>
     </tr>
     <tr>
@@ -98,16 +93,14 @@
 <p>When you use the app, it talks directly to the public servers of the music backend you've selected, in order to:</p>
 
 <ul>
-  <li>Search the catalogue and fetch track / playlist / station metadata</li>
+  <li>Search the catalogue and fetch track / station metadata</li>
   <li>Resolve an audio stream URL for the track or station you want to play</li>
-  <li>Sync your "likes" / library so the favourites grid stays current (Spotify, Audius)</li>
-  <li>Sign in with your account credentials (when you choose to sign in to Spotify)</li>
+  <li>Sync your Audius "likes" so the favourites grid stays current (only when you've connected Audius)</li>
 </ul>
 
 <p>These requests are made directly from your device to the relevant operator's servers over HTTPS. That operator will see your IP address and account activity in the same way they would if you used their own app or website. <strong>Their privacy policies apply to those interactions, not ours:</strong></p>
 
 <ul>
-  <li>Spotify — <a href="https://www.spotify.com/legal/privacy-policy/">https://www.spotify.com/legal/privacy-policy/</a></li>
   <li>Audius — <a href="https://audius.co/legal/privacy-policy">https://audius.co/legal/privacy-policy</a></li>
   <li>Radio Browser — <a href="https://www.radio-browser.info/">https://www.radio-browser.info/</a> (anonymous public API)</li>
 </ul>
@@ -143,7 +136,6 @@
 <table>
   <thead><tr><th>Source</th><th>Authentication</th><th>What we send</th></tr></thead>
   <tbody>
-    <tr><td>Spotify</td><td>OAuth (your account)</td><td>Your access token + the playback / search commands you issue</td></tr>
     <tr><td>Audius</td><td>Optional @handle</td><td>Anonymous search / stream requests identifying the app via <code>app_name=music-widget</code></td></tr>
     <tr><td>Radio Browser</td><td>None</td><td>Anonymous search / station-click requests identifying the app via <code>User-Agent: MusicWidget/&lt;version&gt;</code></td></tr>
   </tbody>
@@ -157,7 +149,7 @@
 
 <p>All data the app handles lives only on your device. <strong>Uninstalling the app removes all of it instantly</strong> — there is nothing on any server we control to delete.</p>
 
-<p>If you signed in to Spotify through the app, signing out (either inside the app's Settings screen or on the backend's own website) revokes the token stored on your device.</p>
+<p>If you connected Audius through the app, disconnecting (in the app's Settings screen) removes your @handle from the device.</p>
 
 <h2>Changes to this policy</h2>
 
