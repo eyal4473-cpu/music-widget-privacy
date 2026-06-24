@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Music Widget — Privacy Policy</title>
+<meta name="description" content="Privacy policy for Music Widget, an Android home-screen music controller.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #555;
+    --rule: #e5e5e5;
+    --accent: #1f5fff;
+    --code-bg: #f4f4f6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121214;
+      --fg: #ececec;
+      --muted: #a0a0a8;
+      --rule: #2a2a2e;
+      --accent: #6f9bff;
+      --code-bg: #1c1c20;
+    }
+  }
+  html, body { background: var(--bg); color: var(--fg); }
+  body {
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  h1 { font-size: 28px; margin-top: 0; }
+  h2 { font-size: 20px; margin-top: 32px; padding-top: 12px; border-top: 1px solid var(--rule); }
+  h3 { font-size: 17px; }
+  p, li, td, th { color: var(--fg); }
+  .meta { color: var(--muted); font-size: 14px; margin-top: -8px; margin-bottom: 24px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  th, td { text-align: left; padding: 10px 12px; border: 1px solid var(--rule); vertical-align: top; }
+  th { background: var(--code-bg); font-weight: 600; }
+  code { background: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+  ul { padding-left: 22px; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 40px 0 20px; }
+  .footer { color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>Music Widget — Privacy Policy</h1>
+<p class="meta">Last updated: June 24, 2026</p>
+
+<p>This Privacy Policy describes how the <strong>Music Widget</strong> mobile application ("the app", "we") handles your information.</p>
+
+<p>The app is published on Google Play under the package id <code>com.eyalar.cloudtunes</code> (a legacy identifier from an earlier project name; it cannot be changed without unpublishing the listing and has no user-facing impact). It is a personal music-control widget for Android home screens that lets you play music from one of three supported backends: <strong>Spotify</strong>, <strong>Audius</strong>, or <strong>Radio Browser</strong>. <strong>No data leaves your device except the network requests required to talk to whichever backend you selected.</strong></p>
+
+<h2>What we collect</h2>
+
+<p><strong>Nothing on our servers.</strong> We do not operate any backend. The app does not send analytics, crash reports, advertising identifiers, or any other telemetry to any server we own.</p>
+
+<p>The only data the app handles at all is:</p>
+
+<table>
+  <thead><tr><th>Data</th><th>Where it lives</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>Your Spotify OAuth access + refresh token (only if you sign in to Spotify)</td>
+      <td>Stored locally in <a href="https://developer.android.com/topic/security/data"><code>EncryptedSharedPreferences</code></a> on your device (AES-256-GCM, key bound to the Android Keystore)</td>
+      <td>So you don't have to sign in on every cold start</td>
+    </tr>
+    <tr>
+      <td>Your Audius @handle (only if you connect Audius)</td>
+      <td>Stored locally in <code>EncryptedSharedPreferences</code> on your device</td>
+      <td>So the favourites grid can fetch your liked tracks</td>
+    </tr>
+    <tr>
+      <td>Your saved favourites and last-played queue</td>
+      <td>Stored locally in plain <code>SharedPreferences</code></td>
+      <td>So the widget shows your favourites and resumes where you left off</td>
+    </tr>
+    <tr>
+      <td>Your settings (active music source, accent colour, transparency, volume step)</td>
+      <td>Stored locally in plain <code>SharedPreferences</code></td>
+      <td>So your customisations survive reboots</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>None of the above is transmitted off-device by the app itself.</p>
+
+<p>Audius and Radio Browser do not require an authenticated sign-in to <em>play</em> content — you only need a sign-in if you want your Audius library's favourites to sync.</p>
+
+<h2>Network requests the app makes</h2>
+
+<p>When you use the app, it talks directly to the public servers of the music backend you've selected, in order to:</p>
+
+<ul>
+  <li>Search the catalogue and fetch track / playlist / station metadata</li>
+  <li>Resolve an audio stream URL for the track or station you want to play</li>
+  <li>Sync your "likes" / library so the favourites grid stays current (Spotify, Audius)</li>
+  <li>Sign in with your account credentials (when you choose to sign in to Spotify)</li>
+</ul>
+
+<p>These requests are made directly from your device to the relevant operator's servers over HTTPS. That operator will see your IP address and account activity in the same way they would if you used their own app or website. <strong>Their privacy policies apply to those interactions, not ours:</strong></p>
+
+<ul>
+  <li>Spotify — <a href="https://www.spotify.com/legal/privacy-policy/">https://www.spotify.com/legal/privacy-policy/</a></li>
+  <li>Audius — <a href="https://audius.co/legal/privacy-policy">https://audius.co/legal/privacy-policy</a></li>
+  <li>Radio Browser — <a href="https://www.radio-browser.info/">https://www.radio-browser.info/</a> (anonymous public API)</li>
+</ul>
+
+<p>The app does not relay any of your data through any intermediate server we control.</p>
+
+<h2>What we don't collect</h2>
+
+<ul>
+  <li>We do not collect your email address, name, or any account information beyond what is required for sign-in to the backend you chose (which is only stored on your device).</li>
+  <li>We do not use any advertising SDKs.</li>
+  <li>We do not use any analytics SDKs.</li>
+  <li>We do not use any crash-reporting SDKs.</li>
+  <li>We do not use Google Play Services beyond what is bundled with AndroidX libraries (e.g. <code>androidx.security</code> for encrypted storage).</li>
+  <li>We do not access your contacts, location, photos, microphone, camera, or any other sensitive permission.</li>
+</ul>
+
+<h2>Permissions</h2>
+
+<p>The app requests these Android permissions:</p>
+
+<ul>
+  <li><code>INTERNET</code> — to fetch metadata and stream audio.</li>
+  <li><code>ACCESS_NETWORK_STATE</code> — so playback adapts to losing connectivity.</li>
+  <li><code>FOREGROUND_SERVICE</code> + <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code> — so audio keeps playing when you switch apps.</li>
+  <li><code>POST_NOTIFICATIONS</code> — so the now-playing notification appears (required by Android 13+).</li>
+</ul>
+
+<h2>Third-party services</h2>
+
+<p>When you choose a music source, the app talks to that source's public API on your behalf. We do not control what those operators log, and they may apply their own data-collection practices independent of the app. Selecting a source is a deliberate, user-initiated action — the app does not contact any of these services until you pick one.</p>
+
+<table>
+  <thead><tr><th>Source</th><th>Authentication</th><th>What we send</th></tr></thead>
+  <tbody>
+    <tr><td>Spotify</td><td>OAuth (your account)</td><td>Your access token + the playback / search commands you issue</td></tr>
+    <tr><td>Audius</td><td>Optional @handle</td><td>Anonymous search / stream requests identifying the app via <code>app_name=music-widget</code></td></tr>
+    <tr><td>Radio Browser</td><td>None</td><td>Anonymous search / station-click requests identifying the app via <code>User-Agent: MusicWidget/&lt;version&gt;</code></td></tr>
+  </tbody>
+</table>
+
+<h2>Children</h2>
+
+<p>The app is not directed at children under 13. We do not knowingly collect personal information from children.</p>
+
+<h2>Data retention and deletion</h2>
+
+<p>All data the app handles lives only on your device. <strong>Uninstalling the app removes all of it instantly</strong> — there is nothing on any server we control to delete.</p>
+
+<p>If you signed in to Spotify through the app, signing out (either inside the app's Settings screen or on the backend's own website) revokes the token stored on your device.</p>
+
+<h2>Changes to this policy</h2>
+
+<p>If this policy changes, the new version will replace this document at the same URL with an updated "Last updated" date.</p>
+
+<h2>Contact</h2>
+
+<p>Questions about this privacy policy can be sent to <a href="mailto:eyalar.cloudtunes@gmail.com">eyalar.cloudtunes@gmail.com</a>.</p>
+
+<hr>
+
+<p class="footer">This policy applies to version 0.1.0 of Music Widget and later, until superseded.</p>
+
+</body>
+</html>
